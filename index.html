@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chunks</title>
+
+    <script src="js/loadJS.js"></script>
+</head>
+
+<body>
+
+    <!-- text -->
+    <div id="sg1">
+        <p>{{ m1 }}</p>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        // when life is settled, load up the fun stuff
+        document.addEventListener('DOMContentLoaded', function () {
+            new Vue({
+                el: '#sg1',
+                // define data - initial display text
+                data: {
+                    m1: "You got to let me know"
+                }
+            })
+        })
+
+
+        //this code is executed only if sg1 exists
+        if (document.querySelector('#sg1')) {
+            loadJS('/js/login.js');
+        }
+    </script>
+</body>
+
+</html>
